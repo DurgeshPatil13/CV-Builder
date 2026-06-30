@@ -5,9 +5,19 @@ import { MdAlternateEmail } from "react-icons/md";
 import { MdOutlineDriveFileRenameOutline } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
-
-const Personalinfo = () => {
-  return (
+import { useState } from 'react';
+const Personalinfo = ({setPersonal}) => {
+  const [formData, setFormData] = useState({
+  fullName: "",
+  email: "",
+  phone: "",
+  location: "",
+});
+function handleSubmit(e) {
+  e.preventDefault();
+  setPersonal(formData);
+}
+    return (
     <div className="personal-card">
       <div className="card-header">
         <div className="title">
@@ -19,7 +29,7 @@ const Personalinfo = () => {
         </div>
       </div>
 
-      <form className="personal-form">
+      <form className="personal-form" >
         <div className="input-group">
           <label>Full Name</label>
           <div className="input-box">
@@ -27,6 +37,12 @@ const Personalinfo = () => {
 
             <input
               type="text"
+              onChange={(e) =>
+setFormData({
+...formData,
+fullName: e.target.value
+})
+}
               placeholder="Enter your full name"
             />
           </div>
@@ -39,6 +55,11 @@ const Personalinfo = () => {
 
             <input
               type="email"
+              onChange={(e) =>
+setFormData({
+...formData,
+email: e.target.value
+})}
               placeholder="Enter your email"
             />
           </div>
@@ -51,6 +72,11 @@ const Personalinfo = () => {
 
             <input
               type="tel"
+               onChange={(e) =>
+setFormData({
+...formData,
+phone: e.target.value
+})}
               placeholder="Enter your phone number"
             />
           </div>
@@ -63,12 +89,17 @@ const Personalinfo = () => {
 
             <input
               type="text"
+               onChange={(e) =>
+setFormData({
+...formData,
+location: e.target.value
+})}
               placeholder="Enter your location"
             />
           </div>
         </div>
 
-        <button type="submit" className="submit-btn">
+        <button type="submit" onClick={handleSubmit}  className="submit-btn">
           Submit
         </button>
       </form>

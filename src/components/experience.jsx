@@ -4,10 +4,22 @@ import { HiOutlineBriefcase } from "react-icons/hi";
 import { FaRegBuilding } from "react-icons/fa";
 import { FaUserTie } from "react-icons/fa6";
 import { FaFileLines } from "react-icons/fa6";
-
+import { useState } from 'react';
 import { FaCalendarDays } from "react-icons/fa6";
 
-const Experience = () => {
+const Experience = ({setexperience}) => {
+    const [exp,setexp]=useState({
+    company:"",
+  jobtitle:"",
+  from:"",
+  to:"",
+  description:"",      
+    });
+    function handleclick(e){
+        e.preventDefault();
+        setexperience(exp);
+
+    }
   return (
   <div className="experience-card">
       <div className="card-header">
@@ -25,9 +37,14 @@ const Experience = () => {
           <label>Company</label>
           <div className="input-box">
        <FaRegBuilding />
+  <input
+            onChange={(e)=>
+                setexp({
+                    ...exp,
+                    company:e.target.value,
+                })
 
-
-            <input
+            }
               type="text"
               placeholder="Company Name"
             />
@@ -41,6 +58,13 @@ const Experience = () => {
 
 
             <input
+             onChange={(e)=>
+                setexp({
+                    ...exp,
+                    jobtitle:e.target.value,
+                })
+
+            }
               type="text"
               placeholder="Frontend Developer"
             />
@@ -52,7 +76,14 @@ const Experience = () => {
           <div className="input-box">
   <FaCalendarDays />
 
-            <input type="month" />
+            <input 
+             onChange={(e)=>
+                setexp({
+                    ...exp,
+                    from:e.target.value,
+                })
+
+            } type="month" />
           </div>
         </div>
 
@@ -61,7 +92,14 @@ const Experience = () => {
           <div className="input-box">
           <FaCalendarDays />
 
-            <input type="month" />
+            <input 
+             onChange={(e)=>
+                setexp({
+                    ...exp,
+                    to:e.target.value,
+                })
+
+            } type="month" />
           </div>
         </div>
 
@@ -70,13 +108,20 @@ const Experience = () => {
           <div className="textarea-box">
          <FaFileLines />
 
-            <textarea
+            <textarea 
+             onChange={(e)=>
+                setexp({
+                    ...exp,
+                    description:e.target.value,
+                })
+
+            }
               placeholder="Describe your responsibilities..."
             ></textarea>
           </div>
         </div>
 
-        <button className="submit-btn">
+        <button onClick={handleclick} className="submit-btn">
           Add Experience
         </button>
 

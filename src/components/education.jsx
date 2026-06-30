@@ -4,11 +4,23 @@ import './education.css'
 import { FaGraduationCap } from "react-icons/fa6";
 import { BsBook } from "react-icons/bs";
 import { SlCalender } from "react-icons/sl";
-
+import { useState } from 'react';
 import { BiSolidSchool } from "react-icons/bi";
 
 
-const Education = () => {
+const Education = ({seteducation}) => {
+const [education1,seteducation1]=useState
+({
+college: "",
+  course: "",
+  from: "",
+  to: "",
+});
+function handleclick(e){
+    e.preventDefault();
+    seteducation(education1);
+
+}
   return (
      <div className="education-card">
       <div className="card-header">
@@ -30,6 +42,12 @@ const Education = () => {
 
             <input
               type="text"
+              onChange={(e)=>
+seteducation1({
+    ...education1,
+    college:e.target.value,
+})
+}
               placeholder="Enter college name"
             />
           </div>
@@ -44,6 +62,12 @@ const Education = () => {
         
         
             <input
+             onChange={(e)=>
+seteducation1({
+    ...education1,
+    course:e.target.value,
+})
+}
               type="text"
               placeholder="Enter course"
             />
@@ -55,7 +79,13 @@ const Education = () => {
           <div className="input-box">
             <SlCalender />
 
-            <input type="text" placeholder="2024" />
+            <input
+             onChange={(e)=>
+seteducation1({
+    ...education1,
+    from:e.target.value,
+})
+} type="text" placeholder="2024" />
           </div>
         </div>
 
@@ -64,11 +94,17 @@ const Education = () => {
           <div className="input-box">
          <SlCalender />
 
-            <input type="text" placeholder="2028" />
+            <input
+             onChange={(e)=>
+seteducation1({
+    ...education1,
+    to:e.target.value,
+})
+} type="text" placeholder="2028" />
           </div>
         </div>
 
-        <button className="submit-btn">
+        <button onClick={handleclick} className="submit-btn">
           Submit
         </button>
 

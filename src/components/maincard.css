@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Commissioner:wght@100..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Jost:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=Pliant:ital,wght@0,100..900;1,100..900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&family=Syne:wght@400..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+.cv-card{
+    font-family: 'syne';
+margin-top: 10px;
+    width:80%;
+    height:700px;
+  margin-left: 100px;
+  margin-right: 100px;
+    background:#f8f7f5;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+/* Header */
+
+.cv-header{
+
+    position:relative;
+    background:#1c1c1c;
+    color:white;
+    padding:34px 36px;
+    height:210px;
+}
+
+.circle{
+
+    position:absolute;
+    right:-20px;
+    top:-20px;
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    background:#3c342c;
+    opacity:.75;
+}
+
+.cv-header h1{
+
+    font-size:40px;
+    line-height:50px;
+    font-weight:800;
+    letter-spacing:1px;
+    margin-bottom:24px;
+}
+
+.contact{
+
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px 28px;
+}
+
+.contact-item{
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#b9b9b9;
+    font-size:18px;
+}
+
+/* Body */
+
+.cv-body{
+
+    padding:30px 36px;
+}
+
+section{
+
+    margin-bottom:28px;
+}
+
+.section-title{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:16px;
+}
+
+.section-title span{
+
+    font-size:20px;
+    font-weight:700;
+    letter-spacing:3px;
+    color:#a17442;
+}
+
+.line{
+
+    flex:1;
+    height:1px;
+    background:#dadada;
+}
+
+section h3{
+
+    font-size:16px;
+    margin-bottom:3px;
+    font-weight:600;
+}
+
+section p{
+
+    font-size:18px;
+    color:#6d6d6d;
+}
+
+section small{
+
+    font-size:15px;
+    color:#a17442;
+}
+
+blockquote{
+
+    margin-top:12px;
+    border-left:2px solid #ddd;
+    padding-left:16px;
+    font-size:15px;
+    line-height:1.7;
+    color:#555;
+}
+
+.skills{
+
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:10px;
+}
+
+.skills span{
+
+    background:#efe9e0;
+    padding:6px 14px;
+    border-radius:30px;
+    font-size:15px;
+    color:#7c613c;
+}

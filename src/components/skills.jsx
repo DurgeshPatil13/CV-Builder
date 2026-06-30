@@ -2,8 +2,18 @@ import React from 'react'
 import './skills.css'
 import { FaCode } from "react-icons/fa";
 import { FaLightbulb } from "react-icons/fa";
+import { useState } from 'react';
+const Skills = ({setskills}) => {
+    const [skill,setskill]=useState([])
+    function handelclick(e){
+        e.preventDefault();
+ 
+  setskills (  (prevSkills) => [
+    ...prevSkills,
+    skill
+  ]);
 
-const Skills = () => {
+    }
   return (
    
     <div className="skills-card">
@@ -17,20 +27,26 @@ const Skills = () => {
         </div>
       </div>
 
-      <form className="skills-form">
+      <form  className="skills-form">
         <div className="input-group">
           <label>Skill</label>
           <div className="input-box">
     <FaLightbulb />
 
-            <input
+            <input 
+            onChange={(e)=>
+                setskill(
+                    e.target.value,
+            )
+            }
+
               type="text"
               placeholder="e.g. React, JavaScript, CSS"
             />
           </div>
         </div>
 
-        <button className="submit-btn">
+        <button onClick={handelclick} className="submit-btn">
           Add Skill
         </button>
       </form>
